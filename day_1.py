@@ -2,15 +2,31 @@
 
 import sys
 
-max_callories = 0
-elf = 0
 
-for line in sys.stdin:
-    if line.strip().isdigit():
-        elf += int(line)
-    else:
-        if elf > max_callories:
-            max_callories = elf
-        elf = 0
+def part_one() -> int:
+    max_calories = 0
+    elf = 0
+    for line in sys.stdin:
+        if line.strip().isdigit():
+            elf += int(line)
+        else:
+            if elf > max_calories:
+                max_calories = elf
+            elf = 0
+    return max_calories
 
-print(max_callories)
+
+def part_two(top: int) -> int:
+    elves = []
+    elf = 0
+    for line in sys.stdin:
+        if line.strip().isdigit():
+            elf += int(line)
+        else:
+            elves.append(elf)
+            elf = 0
+    return sum(sorted(elves)[-top:])
+
+
+# print(part_one())
+print(part_two(3))
