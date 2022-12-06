@@ -10,6 +10,7 @@ Scissors - C Z
 elf_value = ('A', 'B', 'C')
 my_value = ('X', 'Y', 'Z')
 
+
 def part_one() -> int:
     score = 0
     for line in sys.stdin:
@@ -23,7 +24,8 @@ def part_one() -> int:
         score += me_i + 1
     return score
 
-def part_two():
+
+def part_two() -> int:
     score = 0
     for line in sys.stdin:
         elf, me = line.strip().split()
@@ -37,6 +39,7 @@ def part_two():
         else:
             score += (elf_i - 1) % 3 + 1
     return score
+
 
 # print(part_one())
 print(part_two())
