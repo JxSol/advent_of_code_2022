@@ -1,4 +1,4 @@
-""" --- Day 5: Supply Stacks --- """
+""" Day 5: Supply Stacks """
 
 import sys
 from collections import deque
